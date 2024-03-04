@@ -41,7 +41,7 @@
     </nav>
     <section id="sorular">
         <h1>Sorular</h1>
-        <div>
+        <div id="soru_1">
             <h3>1. Arkadaşlarınız ve/veya ailenizle yemekteyken gözünüz hep cep telefonunuzda mı?</h3>
             <input type="radio" name="soru_1" value="2">
             <label>Evet</label>
@@ -51,8 +51,10 @@
             <br>
             <input type="radio" name="soru_1" value="0">
             <label>Hayır</label>
+            <br>
+            <button onclick="gecis(2)">Sonraki Soru</button>
         </div>
-        <div>
+        <div id="soru_2" style="display: none;">
             <h3>2. Kültürel etkinlik ya da yüzyüze eğlence yerine cep telefonu/tablet/bilgisayar ile vakit geçirmeyi mi tercih ediyorsunuz?</h3>
             <input type="radio" name="soru_2" value="2">
             <label>Evet</label>
@@ -62,8 +64,10 @@
             <br>
             <input type="radio" name="soru_2" value="0">
             <label>Hayır</label>
+            <br>
+            <button onclick="gecis(3)">Sonraki Soru</button>
         </div>
-        <div>
+        <div id="soru_3" style="display: none;">
             <h3>3. Kısa bir süre diye başlayıp cep telefonu/televizyon/ tablet/bilgisayarda saatlerce vakit harcıyor musunuz?</h3>
             <input type="radio" name="soru_3" value="2">
             <label>Evet</label>
@@ -73,8 +77,10 @@
             <br>
             <input type="radio" name="soru_3" value="0">
             <label>Hayır</label>
+            <br>
+            <button onclick="gecis(4)">Sonraki Soru</button>
         </div>
-        <div>
+        <div id="soru_4" style="display: none;">
             <h3>4. Cep telefonunuz yanınızda olmadığında kendinizi yalnız, çaresiz ya da boşlukta hissediyor musunuz?</h3>
             <input type="radio" name="soru_4" value="2">
             <label>Evet</label>
@@ -84,8 +90,10 @@
             <br>
             <input type="radio" name="soru_4" value="0">
             <label>Hayır</label>
+            <br>
+            <button onclick="gecis(5)">Sonraki Soru</button>
         </div>
-        <div>
+        <div id="soru_5" style="display: none;">
             <h3>5. Yüz yüze iletişim kurmakta giderek zorlanırken sanal ortamda kendinizi daha rahat hissediyor musunuz?</h3>
             <input type="radio" name="soru_5" value="2">
             <label>Evet</label>
@@ -95,8 +103,74 @@
             <br>
             <input type="radio" name="soru_5" value="0">
             <label>Hayır</label>
+            <br>
+            <button onclick="gecis(6)">Sonraki Soru</button>
         </div>
-        <button onclick="hesapla()">Bitir</button>
+        <div id="soru_6" style="display: none;">
+            <h3>6.Cep telefonu, televizyon, tablet ya da bilgisayarda geçirdiğiniz saatler yeme düzeninizi, uyku saatlerinizi, çalışmanızı ya da sorumluluklarınızı aksatıyor mu?</h3>
+            <input type="radio" name="soru_6" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_6" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_6" value="0">
+            <label>Hayır</label>
+            <br>
+            <button onclick="gecis(7)">Sonraki Soru</button>
+        </div>
+        <div id="soru_7" style="display: none;">
+            <h3>7.Güzel bir bahar günü için aşağıdaki hangi öneri sizin için daha cazip?</h3>
+            <input type="radio" name="soru_7" value="2">
+            <label>Sosyal medyada takılmak</label>
+            <br>
+            <input type="radio" name="soru_7" value="1">
+            <label>Cep telefonundan müzik dinleyerek dışarıda yürümek</label>
+            <br>
+            <input type="radio" name="soru_7" value="0">
+            <label>Dışarıda yürüyüş yapmak</label>
+            <br>
+            <button onclick="gecis(8)">Sonraki Soru</button>
+        </div>
+        <div id="soru_8" style="display: none;">
+            <h3>8.Spora, sanata ya da arkadaş toplantılarına ayırdığınız zaman giderek azalıyor mu?</h3>
+            <input type="radio" name="soru_8" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_8" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_8" value="0">
+            <label>Hayır</label>
+            <br>
+            <button onclick="gecis(9)">Sonraki Soru</button>
+        </div>
+        <div id="soru_9" style="display: none;">
+            <h3>9.İnternet üzerinden edindiğiniz arkadaşlıklar dışında kendinizi insanlardan izole ediyor musunuz?</h3>
+            <input type="radio" name="soru_9" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_9" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_9" value="0">
+            <label>Hayır</label>
+            <br>
+            <button onclick="gecis(10)">Sonraki Soru</button>
+        </div>
+        <div id="soru_10" style="display: none;">
+            <h3>10.Spora, sanata ya da arkadaş toplantılarına ayırdığınız zaman giderek azalıyor mu?</h3>
+            <input type="radio" name="soru_10" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_10" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_10" value="0">
+            <label>Hayır</label>
+            <br>
+            <button onclick="hesapla()">Tamamla</button>
+        </div>
     </section>
     <section id="result" style="display: none;"></section>
     <footer>
@@ -104,35 +178,43 @@
     </footer>
 
     <script>
+        var soruSayisi = 10;
+        function gecis(soru) {
+            console.log(soru)
+            var suankiSoru = document.getElementById("soru_" + (soru-1));
+            suankiSoru.style.display = "none";
+            var sonrakiSoru = document.getElementById("soru_" + (soru));
+            sonrakiSoru.style.display = "block";
+        }
+
         function hesapla() {
             var toplamPuan = 0;
-            for (var i = 1; i <= 5; i++) {
+            for (var i = 1; i <= soruSayisi; i++) {
                 var secilenSecenek = document.querySelector('input[name="soru_' + i + '"]:checked');
                 if (secilenSecenek) {
                     toplamPuan += parseInt(secilenSecenek.value);
                 }
             }
-            var sorular=document.getElementById("sorular");
-            var result=document.getElementById("result")
-            var puan=document.createElement("h1")
-            var sonuc=document.createElement("h3")
-            var a=""
-            if (toplamPuan >= 0 && toplamPuan <= 2) {
-            a = "Puanınız 0 ile 2 arasında,mükemmelsiniz. Aileniz ve arkadaşlarınızla çok güzel vakit geçiriyorsunuz ve kendinize de zaman ayırıyorsunuz";
-            } else if (toplamPuan >= 3 && toplamPuan <= 5) {
-            a = "Puanınız 3 ile 5 arasında,gerçekten iyi durumdasınız. Ancak kendinize biraz daha zaman ayırabilirsiniz.";
-            } else if (toplamPuan >= 6 && toplamPuan <= 8) {
-            a = "Puanınız 6 ve 8 arasında,kendinize ve ailenize zaman ayırmanın vakti gelmiş.";
-            } else if (toplamPuan >= 9 && toplamPuan <= 10) {
-            a = "Puanınız 9 ile 10 arasında,Kendine nerdeyse hiç vakit ayıramıyorsun :( s";
+            var sorular = document.getElementById("sorular");
+            var result = document.getElementById("result");
+            var puan = document.createElement("h1");
+            var sonuc = document.createElement("h3");
+            var a = "";
+            if (toplamPuan >= 0 && toplamPuan <= 5) {
+                a = "Puanınız 0 ile 5 arasında, mükemmelsiniz. Aileniz ve arkadaşlarınızla çok güzel vakit geçiriyorsunuz ve kendinize de zaman ayırıyorsunuz";
+            } else if (toplamPuan >= 6 && toplamPuan <= 10) {
+                a = "Puanınız 6 ile 10 arasında,iyi durumdasınız. Ancak kendinize biraz daha zaman ayırabilirsiniz.";
+            } else if (toplamPuan >= 11 && toplamPuan <= 15) {
+                a = "Puanınız 11 ve 15 arasında, kendinize ve ailenize zaman ayırmanın vakti gelmiş.";
+            } else if (toplamPuan >= 16 && toplamPuan <= 20) {
+                a = "Puanınız 16 ile 20 arasında, Kendine nerdeyse hiç vakit ayıramıyorsun :(";
             }
-            result.appendChild(puan)
-            result.appendChild(sonuc)
-            puan.innerHTML="Puanınız: "+toplamPuan
-            sonuc.innerHTML="Sonuç: "+a
-            sorular.style.display="none"
-            result.style.display="block"
-
+            result.appendChild(puan);
+            result.appendChild(sonuc);
+            puan.innerHTML = "Puanınız: " + toplamPuan;
+            sonuc.innerHTML = "Sonuç: " + a;
+            sorular.style.display = "none";
+            result.style.display = "block";
         }
     </script>
 </body>
