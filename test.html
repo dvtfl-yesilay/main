@@ -98,7 +98,7 @@
         </div>
         <button onclick="hesapla()">Bitir</button>
     </section>
-    <section id="result"></section>
+    <section id="result" style="display: none;"></section>
     <footer>
         &copy; 2024 yesilay.dvtfl.com - Sağlıklı Bir Yaşam İçin
     </footer>
@@ -121,8 +121,10 @@
             a = "Puanınız 0 ile 2 arasında olduğu için mükemmelsiniz. Aileniz ve arkadaşlarınızla çok güzel vakit geçiriyorsunuz ve kendinize de zaman ayırıyorsunuz";
             } else if (toplamPuan >= 3 && toplamPuan <= 5) {
             a = "Puanınız 3 ile 5 arasında olduğu için gerçekten iyi durumdasınız. Ancak kendinize biraz daha zaman ayırabilirsiniz.";
-            } else if (toplamPuan >= 6 && toplamPuan <= 10) {
-            a = "Puanınız 6 ve 10 arasında olduğu için kendinize ve ailenize zaman ayırmanın vakti gelmiş.";
+            } else if (toplamPuan >= 6 && toplamPuan <= 8) {
+            a = "Puanınız 6 ve 8 arasında olduğu için kendinize ve ailenize zaman ayırmanın vakti gelmiş.";
+            } else if (toplamPuan >= 9 && toplamPuan <= 10) {
+            a = "Kendine nerdeyse hiç vakit ayıramıyorsun :( s";
             }
             result.appendChild(puan)
             result.appendChild(sonuc)
