@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeşilay - Bağımlılıklarla Mücadele</title>
+    <link rel="stylesheet" href="src/home_style.css">
+    <style>
+        button {
+            background-color: #4CAF50; /* Yeşil */
+            color: white;
+            padding: 15px 40px; /* Padding değerlerini artırdım */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px; /* Yazı boyutunu artırdım */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Daha koyu yeşil */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Anasayfa</a></li>
+            <li>
+                <a>Bağımlılıklar</a>
+                <ul>
+                    <li><a href="/alkol_bağımlılığı">Alkol Bağımlılığı</a></li>
+                    <li><a href="/madde_bağımlılığı">Madde Bağımlılığı</a></li>
+                    <li><a href="/kumar_bağımlılığı">Kumar Bağımlılığı</a></li>
+                    <li><a href="/teknoloji_bağımlılığı">Teknoloji Bağımlılığı</a></li>
+                </ul>
+            </li>
+            <li><a href="/mücadele">Mücadele Yöntemleri</a></li>
+            <li><a href="/test">Sen de bağımlı mısın?</a></li>
+        </ul>
+    </nav>
+    <section id="sorular">
+        <h1>Sorular</h1>
+        <div>
+            <h3>1. Arkadaşlarınız ve/veya ailenizle yemekteyken gözünüz hep cep telefonunuzda mı?</h3>
+            <input type="radio" name="soru_1" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_1" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_1" value="0">
+            <label>Hayır</label>
+        </div>
+        <div>
+            <h3>2. Kültürel etkinlik ya da yüzyüze eğlence yerine cep telefonu/tablet/bilgisayar ile vakit geçirmeyi mi tercih ediyorsunuz?</h3>
+            <input type="radio" name="soru_2" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_2" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_2" value="0">
+            <label>Hayır</label>
+        </div>
+        <div>
+            <h3>3. Kısa bir süre diye başlayıp cep telefonu/televizyon/ tablet/bilgisayarda saatlerce vakit harcıyor musunuz?</h3>
+            <input type="radio" name="soru_3" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_3" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_3" value="0">
+            <label>Hayır</label>
+        </div>
+        <div>
+            <h3>4. Cep telefonunuz yanınızda olmadığında kendinizi yalnız, çaresiz ya da boşlukta hissediyor musunuz?</h3>
+            <input type="radio" name="soru_4" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_4" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_4" value="0">
+            <label>Hayır</label>
+        </div>
+        <div>
+            <h3>5. Yüz yüze iletişim kurmakta giderek zorlanırken sanal ortamda kendinizi daha rahat hissediyor musunuz?</h3>
+            <input type="radio" name="soru_5" value="2">
+            <label>Evet</label>
+            <br>
+            <input type="radio" name="soru_5" value="1">
+            <label>Kısmen</label>
+            <br>
+            <input type="radio" name="soru_5" value="0">
+            <label>Hayır</label>
+        </div>
+        <button onclick="hesapla()">Bitir</button>
+    </section>
+    <section id="result"></section>
+    <footer>
+        &copy; 2024 yesilay.dvtfl.com - Sağlıklı Bir Yaşam İçin
+    </footer>
+
+    <script>
+        function hesapla() {
+            var toplamPuan = 0;
+            for (var i = 1; i <= 5; i++) {
+                var secilenSecenek = document.querySelector('input[name="soru_' + i + '"]:checked');
+                if (secilenSecenek) {
+                    toplamPuan += parseInt(secilenSecenek.value);
+                }
+            }
+            var sorular=document.getElementById("sorular");
+            var result=document.getElementById("result")
+            var puan=document.createElement("h1")
+            var sonuc=document.createElement("h3")
+            var a=""
+            if (toplamPuan >= 0 && toplamPuan <= 2) {
+            a = "Puanınız 0 ile 2 arasında olduğu için mükemmelsiniz. Aileniz ve arkadaşlarınızla çok güzel vakit geçiriyorsunuz ve kendinize de zaman ayırıyorsunuz";
+            } else if (toplamPuan >= 3 && toplamPuan <= 5) {
+            a = "Puanınız 3 ile 5 arasında olduğu için gerçekten iyi durumdasınız. Ancak kendinize biraz daha zaman ayırabilirsiniz.";
+            } else if (toplamPuan >= 6 && toplamPuan <= 10) {
+            a = "Puanınız 6 ve 10 arasında olduğu için kendinize ve ailenize zaman ayırmanın vakti gelmiş.";
+            }
+            result.appendChild(puan)
+            result.appendChild(sonuc)
+            puan.innerHTML="Puanınız: "+toplamPuan
+            sonuc.innerHTML="Sonuç: "+a
+            sorular.style.display="none"
+            result.style.display="block"
+
+        }
+    </script>
+</body>
+</html>
